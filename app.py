@@ -7,6 +7,7 @@ from data.database import db, ma
 from routes.auth import routes_auth
 from routes.calificaciones import routes_Calificaciones
 from routes.compras import routes_Compras
+from routes.generos import routes_Genero
 from routes.horarios import routes_Horarios
 from routes.peliculas import routes_peliculas
 from routes.salas import routes_Salas
@@ -41,3 +42,4 @@ app.register_blueprint(routes_Calificaciones)
 app.register_blueprint(routes_Horarios)
 app.register_blueprint(routes_Compras)
 app.register_blueprint(routes_Salas)
+app.register_blueprint(routes_Genero)
