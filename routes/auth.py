@@ -9,7 +9,6 @@ routes_auth = Blueprint("routes_auth", __name__)
 def login():
     data = request.get_json()
     nombreUsuario = data["username"]
-    password = data["password"]
     user = Usuario.query.filter_by(nombreUsuario = nombreUsuario).first()
 
     if data['username'] == user.nombreUsuario and data['password'] == user.password:
