@@ -2,9 +2,8 @@ from flask import Flask
 from flask_cors import CORS
 from flask_migrate import Migrate
 from dotenv import load_dotenv
-
-
 from data.database import db, ma
+
 from routes.auth import routes_auth
 from routes.calificaciones import routes_Calificaciones
 from routes.compras import routes_Compras
