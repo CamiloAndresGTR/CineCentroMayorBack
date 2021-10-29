@@ -17,19 +17,22 @@ class Pelicula(db.Model):
     duracion = db.Column(db.Time)
     genero_id = db.Column(db.Integer, db.ForeignKey(Genero.id))
     sinopsis = db.Column(db.String(500))
+    urlImagen = db.Column(db.String(500))
 
-    def __init__(self, titulo, idioma, duracion, sinopsis):
+    def __init__(self, titulo, idioma, duracion, sinopsis,genero_id,urlImagen):
         self.titulo = titulo
         self.idioma = idioma
         self.duracion = duracion
         self.sinopsis = sinopsis
+        self.urlImagen = urlImagen
+        self.genero_id = genero_id
 
 # Fin clases Modelo
 
 #Schema
 class PeliculaSchema(ma.Schema):
     class Meta:
-        fields=('id','titulo', 'idioma','duracion','sinopsis')
+        fields=('id','titulo', 'idioma','duracion','sinopsis','genero_id','urlImagen')
 
 pelicula_schema = PeliculaSchema()
 peliculas_schema = PeliculaSchema(many=True)
