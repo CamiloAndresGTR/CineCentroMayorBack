@@ -9,6 +9,7 @@ from routes.calificaciones import routes_Calificaciones
 from routes.compras import routes_Compras
 from routes.horarios import routes_Horarios
 from routes.peliculas import routes_peliculas
+from routes.salas import routes_Salas
 from routes.tiposUsuario import routes_tipoUsuario
 from routes.usuarios import routes_Usuarios
 
@@ -39,3 +40,4 @@ app.register_blueprint(routes_Usuarios)
 app.register_blueprint(routes_Calificaciones)
 app.register_blueprint(routes_Horarios)
 app.register_blueprint(routes_Compras)
+app.register_blueprint(routes_Salas)
