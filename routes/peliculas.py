@@ -49,11 +49,15 @@ def update_pelicula(id):
     idioma = request.json['idioma']
     duracion = request.json['duracion']
     sinopsis = request.json['sinopsis']
+    genero_id = request.json['genero_id']
+    urlImagen = request.json['urlImagen']
 
     pelicula.titulo = titulo
     pelicula.idioma = idioma
     pelicula.duracion = duracion
     pelicula.sinopsis = sinopsis
+    pelicula.genero_id = genero_id
+    pelicula.urlImagen = urlImagen
 
     db.session.commit()
     return pelicula_schema.jsonify(pelicula)

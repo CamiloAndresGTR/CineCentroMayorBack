@@ -8,9 +8,11 @@ routes_auth = Blueprint("routes_auth", __name__)
 @routes_auth.route("/login",methods=["POST"])
 def login():
     data = request.get_json()
-    user = Usuario.query.filter_by(nombreUsuario=data['username']).first()
+    nombreUsuario = data["username"]
+    password = data["password"]
+    user = Usuario.query.filter_by(nombreUsuario = nombreUsuario).first()
 
-    if data['username'] == "camiloandresgtr":#userBase.nombreUsuario:
+    if data['username'] == user.nombreUsuario and data['password'] == user.password:
         return write_token(data = request.get_json())
     else:
         response = jsonify({"message": "User not found"})

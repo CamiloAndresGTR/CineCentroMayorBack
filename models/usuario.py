@@ -27,6 +27,14 @@ class Usuario(db.Model):
         self.estado = estado
         self.idTipoUsuario = idTipoUsuario
 
+    def verifyPassword(self, password, nombreUsuario):
+        usuario = Usuario.query.filter_by(nombreUsuario).first()
+        user = usuario.username
+        passwd = usuario.password
+        if nombreUsuario == user and password == passwd:
+            return True
+        return False
+
 class UsuarioSchema(ma.Schema):
     class Meta:
         fields=('id', 'tipoId', 'numeroId', 'nombres', 'apellidos', 'email','nombreUsuario', 'password', 'estado', 'idTipoUsuario')
