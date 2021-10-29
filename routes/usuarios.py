@@ -36,7 +36,7 @@ def getUsuarios():
     return jsonify(result)
 
 # 3.Metodo para ver un Usuario por id
-@routes_Usuarios.route('/Usuarios/<id>', methods=['GET'])
+@routes_Usuarios.route('/usuarios/<id>', methods=['GET'])
 def getUsuario(id):
     usuario = Usuario.query.get(id)
 
